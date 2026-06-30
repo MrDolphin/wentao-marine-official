@@ -675,7 +675,7 @@ ul {
 
 @media (max-width: 768px) {
     .top-bar {
-        display: none; /* 移动端隐藏顶部条以节省空间 */
+        display: none;
     }
     .hamburger {
         display: block;
@@ -695,10 +695,65 @@ ul {
     .nav-links.active {
         left: 0;
     }
+    .section {
+        padding: 50px 0; /* 减小手机端各板块的上下留白 */
+    }
+    .hero {
+        padding: 120px 0 60px; /* 调整首屏图片的高度和留白 */
+    }
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px; /* 手机端首屏大标题再稍微缩小一点，更精致 */
+        margin-bottom: 15px;
+    }
+    .hero p {
+        font-size: 16px; /* 首屏副标题缩小 */
+        margin-bottom: 25px;
+    }
+    .section-title h2 {
+        font-size: 26px; /* 各个板块的主标题缩小 */
+        margin-bottom: 15px;
+    }
+    .section-title p {
+        font-size: 14px;
+    }
+    .section-title-left {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+    .lead-text {
+        font-size: 15px; /* 引导文本 */
+    }
+    .about-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+    #company-map {
+        height: 250px !important; /* 手机端地图稍微矮一点，防止霸屏 */
     }
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 20px; /* 减小服务卡片间距 */
+    }
+    .service-card {
+        padding: 30px 20px; /* 减小服务卡片内边距 */
+    }
+    .adv-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .adv-item img {
+        height: 220px; /* 优势图片高度 */
+    }
+    .contact-info {
+        padding: 30px 20px; /* 减小联系方式卡片的内边距 */
+    }
+    .contact-info h2 {
+        font-size: 26px;
+    }
+    .contact-form-container {
+        padding: 40px 20px;
+    }
+    .footer {
+        padding: 40px 0 20px; /* 页脚留白 */
     }
 }

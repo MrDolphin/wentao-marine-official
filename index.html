@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岱山文涛船舶工程有限公司 - WENTAO MARINE ENGINEERING</title>
+    <meta name="description" content="岱山文涛船舶工程有限公司，位于浙江舟山，提供专业、高效的船舶维修、工程外包与技术咨询服务。">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet Map CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+</head>
+<body>
+
+    <!-- 顶部工具栏 (Top Bar) -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-left">
+                <i class="fa-solid fa-phone"></i> 
+                <span class="lang-zh">服务热线：</span><span class="lang-en" style="display:none;">Hotline: </span>
+                <a href="tel:13868221278">13868221278</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="lang-toggle active" data-lang="zh">中文版</a>
+                <span class="divider">|</span>
+                <a href="#" class="lang-toggle" data-lang="en">ENGLISH</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主导航栏 -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-main lang-zh">岱山文涛船舶</span>
+                    <span class="logo-main lang-en" style="display:none;">WENTAO MARINE</span>
+                    <span class="logo-sub">WENTAO MARINE ENGINEERING</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li>
+                        <a href="#home" class="active">
+                            <span class="lang-zh">网站首页</span><span class="lang-en" style="display:none;">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about">
+                            <span class="lang-zh">关于我们</span><span class="lang-en" style="display:none;">About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            <span class="lang-zh">业务介绍</span><span class="lang-en" style="display:none;">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <span class="lang-zh">联系我们</span><span class="lang-en" style="display:none;">Contact Us</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页横幅 (Hero Slider) -->
+    <section class="hero" id="home">
+        <!-- 使用我们为您专门生成的巨大货轮维修场景图 -->
+        <div class="hero-bg" style="background-image: url('hero-bg.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="fade-in-up">
+                <span class="lang-zh">岱山文涛船舶<br>专注于船舶技术领域的工程公司</span>
+                <span class="lang-en" style="display:none;">Wentao Marine<br>Dedicated to Marine Engineering</span>
+            </h1>
+            <p class="fade-in-up delay-1">
+                <span class="lang-zh">专业从事各类船舶维修、工程外包与技术开发支持</span>
+                <span class="lang-en" style="display:none;">Professional Ship Repair, Outsourcing & Technical Support</span>
+            </p>
+            <div class="hero-buttons fade-in-up delay-2">
+                <a href="#about" class="btn btn-primary">
+                    <span class="lang-zh">了解更多</span><span class="lang-en" style="display:none;">Learn More</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势区块 -->
+    <section class="advantages section bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>
+                    <span class="lang-zh">选择文涛的<span class="highlight-number">4</span>大核心优势</span>
+                    <span class="lang-en" style="display:none;"><span class="highlight-number">4</span> Core Advantages</span>
+                </h2>
+                <p>
+                    <span class="lang-zh">为您提供高质量的船舶工程解决方案</span>
+                    <span class="lang-en" style="display:none;">Providing high-quality marine engineering solutions</span>
+                </p>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-item fade-in-up">
+                    <img src="adv1.png" alt="专业技术团队">
+                    <div class="adv-text">
+                        <h3 class="lang-zh">经验丰富的<br>专业工程队伍</h3>
+                        <h3 class="lang-en" style="display:none;">Experienced<br>Professional Team</h3>
+                    </div>
+                </div>
+                <div class="adv-item fade-in-up delay-1">
+                    <img src="adv2.png" alt="高效执行">
+                    <div class="adv-text">
+                        <h3 class="lang-zh">严苛质量标准<br>高效项目交付</h3>
+                        <h3 class="lang-en" style="display:none;">Strict Quality<br>Efficient Delivery</h3>
+                    </div>
+                </div>
+                <div class="adv-item fade-in-up delay-2">
+                    <img src="adv3.png" alt="快速响应">
+                    <div class="adv-text">
+                        <h3 class="lang-zh">快速敏捷的<br>客户需求响应</h3>
+                        <h3 class="lang-en" style="display:none;">Agile & Fast<br>Customer Response</h3>
+                    </div>
+                </div>
+                <div class="adv-item fade-in-up delay-3">
+                    <img src="adv4.png" alt="行业资源">
+                    <div class="adv-text">
+                        <h3 class="lang-zh">深耕舟山港区<br>丰富的行业资源</h3>
+                        <h3 class="lang-en" style="display:none;">Deep Roots in Zhoushan<br>Rich Resources</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-text fade-in-left">
+                    <h2 class="section-title-left lang-zh">岱山文涛船舶工程有限公司</h2>
+                    <h2 class="section-title-left lang-en" style="display:none;">Daishan Wentao Marine Engineering Co., Ltd.</h2>
+                    
+                    <p class="lead-text lang-zh">岱山文涛船舶工程有限公司，是一家专业从事各类船舶工程、维修以及相关技术咨询的综合性企业。</p>
+                    <p class="lead-text lang-en" style="display:none;">We are a comprehensive enterprise specializing in marine engineering, ship repair, and related technical consulting.</p>
+                    
+                    <p class="lang-zh">公司依托舟山得天独厚的海洋资源和产业链优势，致力于为国内外客户提供一站式的船舶工程解决方案。秉承“质量第一，安全至上”的核心理念，我们拥有一支经验丰富的专业技术团队，在船舶维修、工程外包、技术咨询等领域具备强大的综合实力。</p>
+                    <p class="lang-en" style="display:none;">Relying on Zhoushan's unique marine resources and industrial chain advantages, we are committed to providing one-stop marine engineering solutions. Adhering to "Quality First, Safety First", our experienced technical team possesses strong comprehensive strength.</p>
+                    
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check"></i> 
+                            <span class="lang-zh">法定代表人：王伟平</span>
+                            <span class="lang-en" style="display:none;">Legal Representative: Wang Weiping</span>
+                        </li>
+                        <li><i class="fa-solid fa-check"></i> 
+                            <span class="lang-zh">统一社会信用代码：91330921MADK16EMXN</span>
+                            <span class="lang-en" style="display:none;">USCC: 91330921MADK16EMXN</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 20px;">
+                        <span class="lang-zh">联系我们</span><span class="lang-en" style="display:none;">Contact Us</span>
+                    </a>
+                </div>
+                <div class="about-image fade-in-right">
+                    <div id="company-map" style="width: 100%; height: 450px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 1;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 业务介绍 -->
+    <section class="services section bg-dark text-white" id="services">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>
+                    <span class="lang-zh">业务介绍</span><span class="lang-en" style="display:none;">Our Services</span>
+                </h2>
+                <p>
+                    <span class="lang-zh">全方位、高标准的船舶工程解决方案</span>
+                    <span class="lang-en" style="display:none;">Comprehensive & high-standard marine engineering solutions</span>
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon"><i class="fa-solid fa-ship"></i></div>
+                    <h3 class="lang-zh">船舶维修与保养</h3>
+                    <h3 class="lang-en" style="display:none;">Ship Repair & Maintenance</h3>
+                    <p class="lang-zh">提供专业的船舶日常保养、应急维修以及年度坞修服务，确保船舶安全稳定运行。</p>
+                    <p class="lang-en" style="display:none;">Providing professional daily maintenance, emergency repairs, and dry-docking services.</p>
+                </div>
+                <div class="service-card fade-in-up delay-1">
+                    <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3 class="lang-zh">工程外包服务</h3>
+                    <h3 class="lang-en" style="display:none;">Engineering Outsourcing</h3>
+                    <p class="lang-zh">承接各类船舶舾装、管系、电气及机械设备的安装与改造工程。</p>
+                    <p class="lang-en" style="display:none;">Undertaking installation and modification of ship outfitting, piping, electrical and mechanical equipment.</p>
+                </div>
+                <div class="service-card fade-in-up delay-2">
+                    <div class="service-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3 class="lang-zh">技术咨询与支持</h3>
+                    <h3 class="lang-en" style="display:none;">Technical Consulting</h3>
+                    <p class="lang-zh">提供船舶工程规划、成本核算、工艺设计等全方位技术咨询。</p>
+                    <p class="lang-en" style="display:none;">Providing comprehensive technical consulting including engineering planning, cost accounting, and process design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-box shadow-lg">
+                <div class="contact-info">
+                    <h2>
+                        <span class="lang-zh">联系我们</span><span class="lang-en" style="display:none;">Contact Us</span>
+                    </h2>
+                    <p>
+                        <span class="lang-zh">随时期待为您提供最优质的船舶工程服务。</span>
+                        <span class="lang-en" style="display:none;">Looking forward to providing you with the best marine engineering services.</span>
+                    </p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4 class="lang-zh">公司地址</h4><h4 class="lang-en" style="display:none;">Address</h4>
+                                <p class="lang-zh">浙江省舟山市岱山县秀山乡兰山35号</p>
+                                <p class="lang-en" style="display:none;">No. 35 Lanshan, Xiushan Township, Daishan County, Zhoushan, Zhejiang</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <div>
+                                <h4 class="lang-zh">法定代表人</h4><h4 class="lang-en" style="display:none;">Legal Rep</h4>
+                                <p class="lang-zh">王伟平</p><p class="lang-en" style="display:none;">Wang Weiping</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <div>
+                                <h4 class="lang-zh">服务热线</h4><h4 class="lang-en" style="display:none;">Hotline</h4>
+                                <p><a href="tel:13868221278">13868221278</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-bg">
+                    <div class="form-bg-img" style="background-image: url('https://images.unsplash.com/photo-1551608677-49580b06ba67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="lang-zh">岱山文涛船舶工程有限公司</h3>
+                    <h3 class="lang-en" style="display:none;">Daishan Wentao Marine Engineering Co., Ltd.</h3>
+                    <p>
+                        <span class="lang-zh">统一社会信用代码：<br>91330921MADK16EMXN</span>
+                        <span class="lang-en" style="display:none;">USCC:<br>91330921MADK16EMXN</span>
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="lang-zh">快速链接</h4><h4 class="lang-en" style="display:none;">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><span class="lang-zh">网站首页</span><span class="lang-en" style="display:none;">Home</span></a></li>
+                        <li><a href="#about"><span class="lang-zh">关于我们</span><span class="lang-en" style="display:none;">About Us</span></a></li>
+                        <li><a href="#services"><span class="lang-zh">业务介绍</span><span class="lang-en" style="display:none;">Services</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="lang-zh">联系方式</h4><h4 class="lang-en" style="display:none;">Contact</h4>
+                    <p>
+                        <span class="lang-zh">地址：浙江省舟山市岱山县秀山乡兰山35号</span>
+                        <span class="lang-en" style="display:none;">Addr: No. 35 Lanshan, Xiushan Township, Daishan</span>
+                    </p>
+                    <p>
+                        <span class="lang-zh">电话：13868221278</span>
+                        <span class="lang-en" style="display:none;">Tel: 13868221278</span>
+                    </p>
+                    <p>
+                        <span class="lang-zh">法人：王伟平</span>
+                        <span class="lang-en" style="display:none;">Rep: Wang Weiping</span>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    <span class="lang-zh">&copy; 2024 岱山文涛船舶工程有限公司. 版权所有.</span>
+                    <span class="lang-en" style="display:none;">&copy; 2024 Daishan Wentao Marine Engineering Co., Ltd. All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

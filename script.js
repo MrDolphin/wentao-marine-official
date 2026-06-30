@@ -144,4 +144,60 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 表单提交与数据保留逻辑
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    
+    // 监听语言切换，更新表单的 placeholder
+    langToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentLang = toggle.getAttribute('data-lang');
+            const inputs = document.querySelectorAll('#contactForm input');
+            inputs.forEach(input => {
+                if(currentLang === 'en') {
+                    input.placeholder = input.getAttribute('data-en-placeholder');
+                } else {
+                    input.placeholder = input.getAttribute('data-zh-placeholder');
+                }
+            });
+        });
+    });
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalBtnHtml = submitBtn.innerHTML;
+            
+            // 显示加载状态
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    // 显示成功提示，隐藏表单
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'flex';
+                } else {
+                    alert('提交失败，请稍后再试。');
+                    submitBtn.innerHTML = originalBtnHtml;
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('网络错误，请检查网络后重试。');
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 });

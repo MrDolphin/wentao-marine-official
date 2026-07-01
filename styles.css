@@ -744,6 +744,15 @@ ul {
     .adv-item img {
         height: 220px; /* 优势图片高度 */
     }
+    .adv-text {
+        transform: translateY(0); /* 强制在手机端常显文字 */
+        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+        padding: 25px 15px 20px;
+    }
+    .adv-text h3 {
+        font-size: 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    }
     .contact-info {
         padding: 30px 20px; /* 减小联系方式卡片的内边距 */
     }

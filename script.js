@@ -107,8 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const map = L.map('company-map').setView([lat, lng], 13);
         
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+            subdomains: ["1", "2", "3", "4"],
+            attribution: '&copy; <a href="https://ditu.amap.com/">高德地图 (Amap)</a>'
         }).addTo(map);
 
         // 添加公司位置标记
